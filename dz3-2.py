@@ -1,23 +1,24 @@
 import random
 
-
 def get_numbers_ticket(min, max, quantity):
-        try:
-            quantity > (max - min + 1)
-        except Exception:
-            print("Кількість чисел  більша за діапазон доступних чисел")
-        number_set=set()
-        while len(number_set)<quantity:
-            random_number = random.randint(min, max)
-            number_set.add(random_number)
-        return list(number_set)
+    number_ticket = []
+    if min < 1 or max > 999 or not min <= quantity <= max:
+        return number_ticket
+    else:
+        for i in range(quantity):
+            a = random.randint(min, max)
+            if a not in number_ticket:
+                number_ticket.append(a)
+            else:
+                i -= 1
+                continue
+        while(len(number_ticket) < quantity):
+            a = random.randint(min, max)
+            if a not in number_ticket:
+                number_ticket.append(a)
+        return number_ticket
+print(get_numbers_ticket(1, 49, 6))
 
-    # Приклад використання:
-min = 1
-max = 49
-quantity = 6
-lottery_numbers = get_numbers_ticket(1, 49, 6)
-print("Ваші лотерейні числа:", lottery_numbers)
-get_numbers_ticket()
+
 
 

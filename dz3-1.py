@@ -1,13 +1,12 @@
 import datetime as dt
 from datetime import datetime as dtdt
 
-def get_days_from_today():
+def get_days_from_today(date):
     try:
-        user_input = input('Введіть дату у форматі РРРР-ММ-ДД: ') #ввод дати
-        user_date = dtdt.strptime(user_input, '%Y-%m-%d')    
+        date = dtdt.strptime(date, '%Y-%m-%d')   #ввод дати  
         current_date = dtdt.today()   #поточна дата   
-        print((current_date - user_date).days)  #різниця дати
+        return(current_date - date).days  #різниця дати
     except Exception:
         print('Введіть коректну дату')
 
-get_days_from_today()
+print (get_days_from_today("2021-10-09"))
