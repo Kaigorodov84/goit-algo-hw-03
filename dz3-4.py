@@ -25,11 +25,3 @@ def get_upcoming_birthdays(users=None):
     return birthdays
 
 print(get_upcoming_birthdays(users))
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                             
-            
